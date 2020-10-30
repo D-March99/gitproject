@@ -19,6 +19,7 @@ public class UserController {
     private String hello(Model model, User user){
         List<User> userList = userService.findUsers();
         model.addAttribute("userList",userList);
+        System.out.println("加一行语句");
         return "hello.html";
     }
 }
