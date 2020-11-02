@@ -15,11 +15,21 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/hello")
+    @RequestMapping("hello")
     private String hello(Model model, User user){
         List<User> userList = userService.findUsers();
         model.addAttribute("userList",userList);
-        System.out.println("加一行语句");
         return "hello.html";
+    }
+
+    @RequestMapping("addUser")
+    private String addUser(User user,Model model){
+        int rows = userService.addUser(user);
+        if (rows>0){
+            return "redirect:hello";
+        }else {
+            model.addAttribute("msg","插入失败");
+            return "hello.html";
+        }
     }
 }

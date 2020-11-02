@@ -7,5 +7,9 @@
 </head>
 <body>
 <h1 th:each="user:${userList}" th:text="'hello：'+${user.name}"></h1>
+<form th:action="@{addUser}">
+    <input name="name" type="text">
+    <button type="submit">添加</button>
+</form>
 </body>
 </html>
