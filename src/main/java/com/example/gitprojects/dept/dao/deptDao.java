@@ -1,2 +1,4 @@
-package com.example.gitprojects.dept.dao;public interface deptDao {
+package com.example.gitprojects.dept.dao;
+
+public interface deptDao {
 }
